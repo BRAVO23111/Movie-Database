@@ -21,7 +21,7 @@ const MovieListing = () => {
     }
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?apikey=a14815ea&s=${movieText}`
+        `https://www.omdbapi.com/?apikey=a14815ea&s=${movieText}`
       );
       dispatch(addMovies(response.data.Search));
 
