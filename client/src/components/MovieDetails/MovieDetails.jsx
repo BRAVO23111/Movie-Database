@@ -17,7 +17,7 @@ const MovieDetails = () => {
     if (!userId) return;
 
     try {
-      const response = await axios.get(`http://localhost:3000/savedMovie/favorites/${userId}`);
+      const response = await axios.get(`https://movie-database-x595.onrender.com/savedMovie/favorites/${userId}`);
       const favoriteMovies = response.data;
       setIsFavorite(favoriteMovies.some((favMovie) => favMovie.movieId === imdbID));
     } catch (error) {
@@ -32,7 +32,7 @@ const MovieDetails = () => {
     }
 
     try {
-      await axios.post("http://localhost:3000/savedMovie/save-favorite", {
+      await axios.post("https://movie-database-x595.onrender.com/savedMovie/save-favorite", {
         userId,
         movieId: imdbID,
         title: selectedMovie.Title,

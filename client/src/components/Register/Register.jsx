@@ -11,7 +11,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/auth/register', { username, password });
+      const response = await axios.post('https://movie-database-x595.onrender.com/auth/register', { username, password });
       setSuccess(response.data.message);
       setError('');
       alert('Registered');

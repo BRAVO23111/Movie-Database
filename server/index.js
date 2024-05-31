@@ -7,7 +7,11 @@ import { MovieRouter } from './controllers/MovieRouter.js';
 
 dotenv.config();
 const app = express();
-app.use(cors())
+app.use(cors({
+    origin: ["https://movie-database-gold.vercel.app"], // Allow your Vercel app
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  }))
 const db = mongoose.connect(process.env.MONGO_URI)
 try {
     if(db){

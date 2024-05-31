@@ -9,7 +9,7 @@ const SavedMovie = () => {
 
   const handleDelete = async (movieId) => {
     try {
-      await axios.delete(`http://localhost:3000/savedMovie/favorites/${userId}/${movieId}`);
+      await axios.delete(`https://movie-database-x595.onrender.com/savedMovie/favorites/${userId}/${movieId}`);
       setSavedMovies(savedMovies.filter((movie) => movie.movieId !== movieId));
     } catch (error) {
       console.error("Error deleting saved movie:", error);
@@ -21,7 +21,7 @@ const SavedMovie = () => {
       if (!userId) return; // Skip fetching if there's no userId
 
       try {
-        const response = await axios.get(`http://localhost:3000/savedMovie/favorites/${userId}`);
+        const response = await axios.get(`https://movie-database-x595.onrender.com/savedMovie/favorites/${userId}`);
         setSavedMovies(response.data);
       } catch (error) {
         console.error("Error fetching saved movies:", error);
